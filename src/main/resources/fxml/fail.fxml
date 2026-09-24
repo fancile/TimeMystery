@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="788.0" stylesheets="@../css/fail.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.FailController">
+   <children>
+      <ImageView fitHeight="430.0" fitWidth="790.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Other%20Images/gameOpening.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="replayBtn" layoutX="320.0" layoutY="317.0" mnemonicParsing="false" onAction="#onResetBtn" prefHeight="46.0" prefWidth="126.0" styleClass="replay-button" text="Replay" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="79.0" prefHeight="64.0" prefWidth="358.0" styleClass="fail-title-text" text="Fail" textAlignment="CENTER">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label fx:id="failLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="269.0" layoutY="159.0" prefHeight="139.0" prefWidth="229.0" styleClass="fail-label-text" textAlignment="CENTER" wrapText="true">
+         <!-- <font>
+            <Font size="24.0" />
+         </font> -->
+      </Label>
+   </children>
+</Pane>

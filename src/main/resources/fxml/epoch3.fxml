@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.Epoch3Controller">
+  <children>
+    <Button fx:id="travelButton" layoutX="34.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" opacity="0.0" text="Travel" />
+    <fx:include fx:id="chatPanel" layoutX="6.0" layoutY="0.0" source="chat.fxml" visible="false" />
+
+    <AnchorPane fx:id="pavementView" layoutX="3.0" visible="false">
+      <children>
+        <ImageView fitHeight="442.0" fitWidth="807.0" layoutX="-5.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../images/Epoch%203%20Images/finalDebrisCloseup.jpg" />
+          </image>
+        </ImageView>
+            <ImageView fx:id="plank1" fitHeight="78.0" fitWidth="265.0" layoutX="298.0" layoutY="166.0" onMouseDragged="#onPlankDrag" onMouseEntered="#onPlankHover" onMouseExited="#onPlankExit" onMousePressed="#onPlankPress" onMouseReleased="#onPlankRelease" pickOnBounds="true" preserveRatio="true" rotate="30.5" scaleX="1.5">
+               <image>
+                  <Image url="@../images/Epoch%203%20Images/woodPlank.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="plank2" fitHeight="150.0" fitWidth="200.0" layoutX="303.0" layoutY="173.0" onMouseDragged="#onPlankDrag" onMouseEntered="#onPlankHover" onMouseExited="#onPlankExit" onMousePressed="#onPlankPress" onMouseReleased="#onPlankRelease" pickOnBounds="true" preserveRatio="true" rotate="-22.8" scaleX="1.5">
+               <image>
+                  <Image url="@../images/Epoch%203%20Images/woodPlank.jpg" />
+               </image>
+            </ImageView>
+            <Rectangle fx:id="wiresAndCigs" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="194.0" layoutX="254.0" layoutY="107.0" onMouseClicked="#wiresAndCigsClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="309.0" />
+      </children>
+    </AnchorPane>
+      <AnchorPane fx:id="openingEpoch3" prefHeight="200.0" prefWidth="200.0">
+         <children>
+          <ImageView fitHeight="433.0" fitWidth="807.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+              <Image url="@../images/Epoch%203%20Images/epoch3Clock.jpg" />
+            </image>
+          </ImageView>
+          <Rectangle fx:id="Alex" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="311.0" layoutX="447.0" layoutY="93.0" onMouseClicked="#onRectangleClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="142.0" />
+          <Rectangle fx:id="pavement" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="33.0" layoutX="315.0" layoutY="379.0" onMouseClicked="#onRectangleClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" rotate="-4.6" stroke="BLACK" strokeType="INSIDE" width="82.0" />
+      <Button fx:id="endInvestigationBtn" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#onDecisionButtonClick" styleClass="decision-button" text="Make your decision" />
+                
+            <Label fx:id="incompleteInvestigationLbl" layoutX="14.0" layoutY="62.0" prefHeight="134.0" prefWidth="113.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+         </children>
+      </AnchorPane>
+      <Circle fill="#d07a71" layoutX="262.0" layoutY="37.0" onMouseClicked="#onTravelClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
+  <Button fx:id="BACK" layoutX="703.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" prefHeight="2.0" prefWidth="68.0" styleClass="back-button" text="Go back" />
+      <Button fx:id="muteBtn" layoutX="694.0" layoutY="348.0" mnemonicParsing="false" onAction="#onMute" styleClass="mute-button" text="Mute" />
+      <AnchorPane fx:id="zoomDebris" prefHeight="429.0" prefWidth="798.0" visible="false">
+         <children>
+            <ImageView fitHeight="438.0" fitWidth="806.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Epoch%203%20Images/zoomedDebrisCloseup.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="zoomedDebrisLbl" alignment="CENTER" layoutX="240.0" layoutY="350.0" prefHeight="68.0" prefWidth="304.0" styleClass="interactable-text" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+         </children>
+      </AnchorPane>
+    <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="371.0" layoutY="18.0" prefHeight="33.0" prefWidth="74.0" styleClass="timer-label" textAlignment="CENTER" />
+  </children>
+</Pane>

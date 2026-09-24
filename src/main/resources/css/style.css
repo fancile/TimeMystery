@@ -1,0 +1,595 @@
+/* ============================================================
+   Harmony Hall — JavaFX stylesheet
+   Warm noir: aged wood, brass lantern light, cream paper.
+
+   Usage:
+     scene.getStylesheets().add(
+         getClass().getResource("/harmony-hall.css").toExternalForm());
+
+   In Scene Builder: Preview > Scene Style Sheets > Add,
+   or set it on the root container's Properties > Stylesheets.
+
+   JavaFX has no var() / custom properties. It uses "looked-up
+   colors" instead: any -fx-*-color name you define on .root is
+   inherited by every child node, so the block below is the one
+   place to change the palette.
+   ============================================================ */
+
+.root {
+
+    /* --- Palette ------------------------------------------- */
+    -ink-deep:      #1e1712;   /* darkest wood shadow          */
+    -ink:           #2b211a;   /* panel / label background     */
+    -ink-raised:    #3a2d23;   /* buttons, inputs              */
+    -ink-hover:     #4a3a2c;
+
+    -cream:         #f2ead8;   /* primary text                 */
+    -cream-dim:     #c3b69c;   /* secondary text, placeholders */
+    -cream-faint:   #8a7c66;   /* disabled                     */
+
+    -brass:         #c9a05c;   /* accent: borders, focus, glow */
+    -brass-bright:  #e6c288;
+    -brass-shadow:  #8a6a33;
+
+    -danger:        #9e3b2e;   /* wrong verdict, errors        */
+    -danger-bright: #c85a45;
+
+    /* --- Base --------------------------------------------- */
+    -fx-background-color: -ink-deep;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-size: 14px;
+
+    /* Recolours the built-in focus ring, text selection,
+       scroll bars and anything else keyed off these. */
+    -fx-accent: -brass;
+    -fx-focus-color: -brass;
+    -fx-faint-focus-color: rgba(201, 160, 92, 0.25);
+    -fx-selection-bar: -brass-shadow;
+    -fx-selection-bar-text: -cream;
+    -fx-text-background-color: -cream;
+    -fx-control-inner-background: -ink-raised;
+}
+
+
+/* ============================================================
+   Text/Labels
+   ============================================================ */
+
+/* .label,
+.text {
+    -fx-text-fill: -cream;
+    -fx-fill: -cream;
+} */
+ 
+
+/* Time Travel Hub cards */
+.travel-card-title {
+    -fx-text-fill: #2b211a;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-weight: bold;
+}
+
+.travel-card-description {
+    -fx-text-fill: #4a3a2c;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+}
+
+.intervention-text-title {
+    -fx-text-fill: #4a3a2c;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+     -fx-font-size: 13px;
+}
+
+.intervention-text-description{
+    -fx-text-fill: #4a3a2c;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-size: 11px;
+}
+
+.intervention-header{
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-size: 19px;
+    -fx-padding: 10px 22px;
+
+}
+
+.text-box-prompt{
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-size: 11px;
+}
+
+
+
+
+
+
+
+
+.title {
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -brass-bright;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.75), 6, 0.0, 0, 2);
+}
+
+.subtitle {
+    -fx-font-size: 20px;
+    -fx-text-fill: -cream;
+}
+
+.caption {
+    -fx-font-size: 12px;
+    -fx-text-fill: -cream-dim;
+}
+
+/* Brass plaque — for scene names, room signage, chapter cards. */
+.plaque {
+    -fx-background-color: linear-gradient(to bottom, #3a2d23, #241b15);
+    -fx-border-color: -brass;
+    -fx-border-width: 2px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-padding: 10px 22px;
+    -fx-text-fill: -brass-bright;
+    -fx-font-size: 18px;
+    -fx-letter-spacing: 1px;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.6), 8, 0.0, 0, 2);
+}
+
+.dialogue {
+    -fx-text-fill: -cream;
+    -fx-font-size: 16px;
+    -fx-line-spacing: 4px;
+    -fx-wrap-text: true;
+}
+
+.speaker-name {
+    -fx-text-fill: -brass;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.danger-text {
+    -fx-text-fill: -danger-bright;
+    -fx-font-weight: bold;
+}
+
+
+/* ============================================================
+   Panels & containers
+   ============================================================ */
+
+.panel {
+    -fx-background-color: -ink;
+    -fx-background-radius: 4px;
+    -fx-border-color: rgba(201, 160, 92, 0.35);
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-padding: 18px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.55), 18, 0.0, 0, 6);
+}
+
+/* Dialogue / narration box sitting over artwork. */
+.overlay-panel {
+    -fx-background-color: rgba(30, 23, 18, 0.9);
+    -fx-background-radius: 4px;
+    -fx-border-color: -brass;
+    -fx-border-width: 0 0 2px 0;
+    -fx-padding: 16px 20px;
+}
+
+.separator .line {
+    -fx-border-color: rgba(201, 160, 92, 0.3);
+    -fx-border-width: 1px 0 0 0;
+}
+
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+
+.button,
+.toggle-button {
+    -fx-background-color: linear-gradient(to bottom, -ink-raised, #2b211a);
+    -fx-background-radius: 3px;
+    -fx-border-color: -brass-shadow;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: -cream;
+    -fx-font-size: 14px;
+    -fx-padding: 9px 20px;
+    -fx-cursor: hand;
+}
+
+.button:hover,
+.toggle-button:hover {
+    -fx-background-color: linear-gradient(to bottom, -ink-hover, #33271e);
+    -fx-border-color: -brass;
+    -fx-text-fill: -brass-bright;
+    /* Same lantern glow as the in-world interactables. */
+    -fx-effect: dropshadow(gaussian, rgba(201, 160, 92, 0.55), 14, 0.0, 0, 0);
+}
+
+.button:pressed,
+.toggle-button:pressed,
+.toggle-button:selected {
+    -fx-background-color: #211a14;
+    -fx-border-color: -brass-bright;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.7), 8, 0.0, 0, 2);
+}
+
+.button:focused,
+.toggle-button:focused {
+    -fx-border-color: -brass-bright;
+}
+
+.button:disabled,
+.toggle-button:disabled {
+    -fx-opacity: 1.0;           /* override the default 0.4 wash */
+    -fx-background-color: #251d17;
+    -fx-border-color: #3a2d23;
+    -fx-text-fill: -cream-faint;
+    -fx-effect: null;
+    -fx-cursor: default;
+}
+
+/* Different types of buttons */
+.button.start-button {
+    -fx-font-size: 13px;
+    -fx-padding: 8px 14px;
+}
+
+.button.intervention-button {
+    -fx-font-size: 11px;
+    -fx-padding: 5px 10px;
+}
+
+.button.back-button {
+    -fx-font-size: 12px;
+    -fx-padding: 5px 10px;
+}
+
+.button.travel-button {
+    -fx-font-size: 12px;
+    
+}
+
+.evaluating-button {
+    -fx-font-size: 12px;
+    -fx-padding: 4px 6px;
+}
+
+.chat-buttons {
+    -fx-font-size: 12px;
+    -fx-padding: 3.75px 5px;
+}
+
+.mute-button {
+    -fx-font-size: 12px;
+    -fx-padding: 4px 5px;
+}
+
+.decision-button {
+    -fx-font-size: 12px;
+    -fx-padding: 4px 5px;
+}
+
+.button.primary:hover {
+    -fx-background-color: linear-gradient(to bottom, -brass-bright, -brass);
+    -fx-text-fill: #1e1712;
+}
+
+/* Accuse, quit, delete save — anything you can't undo. */
+.button.danger {
+    -fx-border-color: -danger;
+    -fx-text-fill: -danger-bright;
+}
+
+.button.danger:hover {
+    -fx-background-color: linear-gradient(to bottom, #4a2620, #331914);
+    -fx-border-color: -danger-bright;
+    -fx-text-fill: #f0d5cd;
+    -fx-effect: dropshadow(gaussian, rgba(200, 90, 69, 0.5), 14, 0.0, 0, 0);
+}
+
+/* Flat text button for back / skip / cancel. */
+.button.ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: -cream-dim;
+    -fx-effect: null;
+}
+
+.button.ghost:hover {
+    -fx-text-fill: -brass-bright;
+    -fx-background-color: rgba(201, 160, 92, 0.1);
+    -fx-effect: null;
+}
+
+
+
+
+/* ============================================================
+   Text fields & text areas
+   ============================================================ */
+
+/* .text-field,
+.text-area,
+.password-field {
+    -fx-background-color: #181210;
+    -fx-background-radius: 3px;
+    -fx-border-color: -brass-shadow;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-text-fill: -cream;
+    -fx-prompt-text-fill: -cream-faint;
+    -fx-highlight-fill: -brass-shadow;
+    -fx-highlight-text-fill: -cream;
+    -fx-font-size: 14px;
+} */
+
+/* .text-field,
+.password-field {
+    -fx-padding: 8px 12px;
+} */
+
+/* A TextArea paints its inner viewport separately — without this
+   you get a white box inside your dark border. */
+.text-area .content {
+    -fx-background-color: #181210;
+    -fx-padding: 10px;
+}
+
+.text-area .scroll-pane,
+.text-area .viewport {
+    -fx-background-color: transparent;
+}
+
+.text-field:focused,
+.text-area:focused,
+.password-field:focused {
+    -fx-border-color: -brass;
+    -fx-effect: dropshadow(gaussian, rgba(201, 160, 92, 0.35), 10, 0.0, 0, 0);
+}
+
+.text-field:disabled,
+.text-area:disabled {
+    -fx-opacity: 1.0;
+    -fx-background-color: #221b16;
+    -fx-text-fill: -cream-faint;
+}
+
+/* Notebook / evidence log: reads as paper, not an input box. */
+.text-area.notebook .content {
+    -fx-background-color: #e8dcc0;
+}
+
+.text-area.notebook {
+    -fx-text-fill: #33261c;
+    -fx-background-color: #e8dcc0;
+    -fx-border-color: -brass-shadow;
+    -fx-font-size: 15px;
+}
+
+
+/* ============================================================
+   Scroll bars
+   ============================================================ */
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: #1a1410;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: -brass-shadow;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar:vertical .thumb:hover,
+.scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: -brass;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 4px;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: -cream-faint;
+}
+
+
+/* ============================================================
+   Lists, choices, checkboxes
+   ============================================================ */
+
+.list-view,
+.combo-box-popup .list-view {
+    -fx-background-color: -ink;
+    -fx-border-color: -brass-shadow;
+    -fx-border-width: 1px;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: -cream;
+    -fx-padding: 8px 12px;
+}
+
+.list-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+}
+
+.list-cell:hover {
+    -fx-background-color: rgba(201, 160, 92, 0.15);
+    -fx-text-fill: -brass-bright;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: -brass-shadow;
+    -fx-text-fill: -cream;
+}
+
+.combo-box,
+.choice-box {
+    -fx-background-color: -ink-raised;
+    -fx-background-radius: 3px;
+    -fx-border-color: -brass-shadow;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 2px 4px;
+}
+
+.combo-box .list-cell,
+.choice-box .label {
+    -fx-text-fill: -cream;
+}
+
+.combo-box .arrow,
+.choice-box .arrow {
+    -fx-background-color: -brass;
+}
+
+.check-box .box,
+.radio-button .radio {
+    -fx-background-color: #181210;
+    -fx-border-color: -brass-shadow;
+    -fx-border-width: 1px;
+}
+
+.check-box:selected .mark,
+.radio-button:selected .dot {
+    -fx-background-color: -brass-bright;
+}
+
+.check-box .text,
+.radio-button .text {
+    -fx-fill: -cream;
+}
+
+/* ============================================================
+   Verdict / outcome screens
+   ============================================================ */
+
+.verdict-correct {
+    -fx-text-fill: -brass-bright;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(201, 160, 92, 0.5), 18, 0.0, 0, 0);
+}
+
+.verdict-wrong {
+    -fx-text-fill: -danger-bright;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(158, 59, 46, 0.55), 18, 0.0, 0, 0);
+}
+
+.error-message {
+    -fx-background-color: rgba(158, 59, 46, 0.2);
+    -fx-border-color: -danger;
+    -fx-border-width: 0 0 0 3px;
+    -fx-text-fill: #f0d5cd;
+    -fx-padding: 10px 14px;
+}
+
+
+/* ============================================================
+   Interactable hotspots (if you style them in CSS)
+   ============================================================ */
+
+.hotspot {
+    -fx-cursor: hand;
+}
+
+.hotspot:hover {
+    -fx-effect: dropshadow(gaussian, rgba(230, 194, 136, 0.85), 22, 0.35, 0, 0);
+}
+
+/* ============================================================
+   Labels
+   ============================================================ */
+
+.verdict-label {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+    -fx-background-color: #211a14;
+}
+
+.verdict-outcome {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-background-color: #211a14;
+}
+
+.timer-label {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-background-color: #211a14;
+}
+
+.interactable-text {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-font-size: 12px;
+    -fx-background-color: #211a14;
+}
+
+.chosen-intervention-text {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-font-size: 10px;
+    -fx-background-color: #211a14;
+}
+
+.fail-title-text {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-font-size: 25px;
+    -fx-background-color: #211a14;
+}
+
+.fail-label-text {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-text-alignment: center;
+    -fx-font-size: 15px;
+    -fx-background-color: #211a14;
+}
+

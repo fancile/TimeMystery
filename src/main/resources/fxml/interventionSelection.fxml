@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.InterventionSelectionController">
+   <children>
+      <ImageView fitHeight="436.0" fitWidth="809.0" layoutX="-8.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Other%20Images/interventionState.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="301.0" layoutY="28.0" style="-fx-background-color: black;" styleClass="intervention-header" text="What will you do?" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="hireButton" layoutX="90.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#hireButtonClick" rotate="354.0" styleClass="intervention-button" text="Hire them!" />
+      <Label layoutX="73.0" layoutY="41.0" prefHeight="96.0" prefWidth="90.0" rotate="354.0" styleClass="intervention-text-title" text="Hire overnight security for the next three days." textAlignment="CENTER" wrapText="true" />
+      <Label layoutX="72.0" layoutY="110.0" prefHeight="71.0" prefWidth="108.0" rotate="354.0" styleClass="intervention-text-description" text="They'll watch over and patrol the hall for the next three nights." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="96.0" layoutY="240.0" prefHeight="71.0" prefWidth="83.0" rotate="354.0" styleClass="intervention-text-title" text="Tell Alex to cancel the concert immediately." textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="cancelButton" layoutX="114.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#cancelButtonClick" rotate="354.0" styleClass="intervention-button" text="Cancel it!" />
+      <Label layoutX="95.0" layoutY="303.0" prefHeight="71.0" prefWidth="108.0" rotate="354.0" styleClass="intervention-text-description" text="If there's no concert, then there's no reason for the fire to happen." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="618.0" layoutY="62.0" prefHeight="71.0" prefWidth="83.0" rotate="8.0" styleClass="intervention-text-title" text="Report the broken panel to hall management." textAlignment="CENTER" wrapText="true" />
+      <Label layoutX="588.0" layoutY="121.0" prefHeight="71.0" prefWidth="124.0" rotate="8.0" styleClass="intervention-text-description" text="You'll tell hall management everything in a meeting." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button fx:id="reportButton" layoutX="606.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#reportButtonClick" rotate="8.0" styleClass="intervention-button" text="Report it!" />
+      <Label fx:id="timerLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="356.0" layoutY="73.0" prefHeight="33.0" prefWidth="75.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" />
+      <Label layoutX="617.0" layoutY="242.0" prefHeight="71.0" prefWidth="83.0" rotate="8.0" styleClass="intervention-text-title" text="Convince Alex not to cut Dan from the show." textAlignment="CENTER" wrapText="true" />
+      <Label layoutX="597.0" layoutY="304.0" prefHeight="71.0" prefWidth="108.0" rotate="8.0" styleClass="intervention-text-description" text="Alex will give Dan's band a small slot at the end of the show." textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button fx:id="helpButton" layoutX="594.0" layoutY="370.0" mnemonicParsing="false" onMouseClicked="#helpButtonClick" rotate="8.0" styleClass="intervention-button" text="Convince him!" />
+   </children>
+</Pane>
