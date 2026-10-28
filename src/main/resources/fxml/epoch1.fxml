@@ -26,9 +26,8 @@
 
             <Rectangle fx:id="alexAtDeskRect" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="269.0" layoutX="388.0" layoutY="84.0" onMouseClicked="#alexAtDeskClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="202.0" />
             <Circle fx:id="travelCircle" fill="#d07a71" layoutX="78.0" layoutY="209.0" onMouseClicked="#onTravelClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
-            <Button fx:id="endInvestigationBtn" layoutX="21.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#onDecisionButtonClick" styleClass="decision-button" text="Make your decision" />
-            <Label fx:id="incompleteInvestigationLbl" alignment="CENTER" layoutX="24.0" layoutY="54.0" prefHeight="124.0" prefWidth="123.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-            <Button fx:id="muteBtn" layoutX="694.0" layoutY="348.0" mnemonicParsing="false" onAction="#onMute" styleClass="mute-button" text="Button" />
+            <Button fx:id="endInvestigationBtn" layoutX="663.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#onDecisionButtonClick" styleClass="decision-button" text="Make your decision" />
+            <Label fx:id="incompleteInvestigationLbl" alignment="CENTER" layoutX="663.0" layoutY="64.0" prefHeight="124.0" prefWidth="123.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
             
          </children>
       </AnchorPane>
@@ -59,7 +58,9 @@
 
                               <Label fx:id="lblTimer" alignment="CENTER" layoutX="371.0" layoutY="18.0" prefHeight="33.0" prefWidth="75.0" styleClass="timer-label" textAlignment="CENTER" />
 
-      <Button fx:id="backButton" layoutX="703.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="26.0" prefWidth="68.0" styleClass="back-button" text="Go back" />
+      <Button fx:id="backButton" layoutX="16.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" prefHeight="26.0" prefWidth="68.0" styleClass="back-button" text="Go back" />
+      <Rectangle fx:id="blackout" arcHeight="5.0" arcWidth="5.0" height="455.0" layoutX="-15.0" layoutY="-5.0" mouseTransparent="true" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="834.0" />
+      <Button fx:id="muteBtn" layoutX="674.0" layoutY="338.0" mnemonicParsing="false" onAction="#onMute" prefHeight="26.0" prefWidth="100.0" styleClass="mute-button" text="Button" />
 
    </children>
 </Pane>

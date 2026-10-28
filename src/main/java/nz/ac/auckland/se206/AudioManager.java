@@ -19,9 +19,9 @@ public final class AudioManager {
       return;
     }
 
-    URL musicResource = AudioManager.class.getResource("/sounds/background.mp3");
+    URL musicResource = AudioManager.class.getResource("/sounds/BGM.mp3");
     if (musicResource == null) {
-      System.err.println("Background music not found: /sounds/background.mp3");
+      System.err.println("BGM music not found: /sounds/BGM.mp3");
       return;
     }
 

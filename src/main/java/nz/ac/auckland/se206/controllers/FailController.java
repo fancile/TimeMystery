@@ -38,6 +38,8 @@ public class FailController {
   @FXML
   private void onResetBtn(ActionEvent event) throws IOException {
     failLbl.setVisible(false);
+    InterventionSelectionController.resetChosenIntervention();
+    VerdictController.resetVerdictState();
     // Call the GameStateContext resetContext method
     context.resetContext();
 

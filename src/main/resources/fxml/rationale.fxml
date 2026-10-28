@@ -15,11 +15,11 @@
          </image>
       </ImageView>
       <TextArea fx:id="rationaleTxtArea" layoutX="384.0" layoutY="47.0" prefHeight="292.0" prefWidth="215.0" promptText="Go on, detective..." styleClass="text-box-prompt" wrapText="true" />
-      <Label fx:id="rationaleExplanationLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="109.0" prefHeight="280.0" prefWidth="189.0" rotate="359.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-      <Label fx:id="timerLbl" alignment="CENTER" layoutX="154.0" layoutY="23.0" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" />
+      <Label fx:id="rationaleExplanationLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="112.0" prefHeight="280.0" prefWidth="189.0" rotate="359.0" styleClass="rationale-intro-label-text" textAlignment="CENTER" wrapText="true" />
+      <Label fx:id="timerLbl" alignment="CENTER" layoutX="154.0" layoutY="23.0" prefHeight="33.0" prefWidth="74.0" styleClass="timer-label" textAlignment="CENTER" textFill="WHITE" />
       <Button fx:id="submitRationaleBtn" layoutX="532.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#submitRationaleClick" prefHeight="26.0" prefWidth="67.0" rotate="359.0" styleClass="evaluating-button" textAlignment="CENTER" />
-      <Label fx:id="evaluationLbl" alignment="CENTER" layoutX="381.0" layoutY="49.0" prefHeight="292.0" prefWidth="220.0" rotate="359.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-      <Label fx:id="retryEvaluationLbl" alignment="CENTER" layoutX="381.0" layoutY="49.0" prefHeight="292.0" prefWidth="220.0" rotate="359.0" style="-fx-background-color: black;" styleClass="text-box-prompt" text="Sorry, something went wrong. Please try again." textAlignment="CENTER" textFill="WHITE" wrapText="true" />
-      <Label fx:id="interventionChosenLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="102.0" layoutY="64.0" prefHeight="33.0" prefWidth="187.0" rotate="359.0" styleClass="chosen-intervention-text" textAlignment="CENTER" />
+      <Label fx:id="evaluationLbl" alignment="CENTER" layoutX="381.0" layoutY="49.0" prefHeight="292.0" prefWidth="220.0" rotate="359.0" styleClass="evaluation-label-text" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+      <Label fx:id="retryEvaluationLbl" alignment="CENTER" layoutX="381.0" layoutY="49.0" prefHeight="292.0" prefWidth="220.0" rotate="359.0" styleClass="text-box-prompt" text="Sorry, something went wrong. Please try again." textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+      <Label fx:id="interventionChosenLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="93.0" layoutY="68.0" prefHeight="33.0" prefWidth="209.0" rotate="359.0" styleClass="chosen-intervention-text" textAlignment="CENTER" />
    </children>
 </Pane>

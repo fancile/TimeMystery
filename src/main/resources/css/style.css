@@ -55,14 +55,6 @@
    Text/Labels
    ============================================================ */
 
-/* .label,
-.text {
-    -fx-text-fill: -cream;
-    -fx-fill: -cream;
-} */
- 
-
-/* Time Travel Hub cards */
 .travel-card-title {
     -fx-text-fill: #2b211a;
     -fx-font-family: "Georgia", "Palatino Linotype", serif;
@@ -94,17 +86,22 @@
 
 }
 
-.text-box-prompt{
+.intervention-title-header{
     -fx-text-fill: -cream;
+    -fx-background-color: #1e1712;
     -fx-font-family: "Georgia", "Palatino Linotype", serif;
-    -fx-font-size: 11px;
+    -fx-font-size: 19px;
+    -fx-padding: 10px 22px;
+
 }
 
+.text-box-prompt{
+    -fx-text-fill: -cream;
+   -fx-prompt-text-fill: -cream-dim;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-font-size: 11px;
 
-
-
-
-
+}
 
 
 .title {
@@ -308,32 +305,9 @@
     -fx-effect: null;
 }
 
-
-
-
 /* ============================================================
    Text fields & text areas
    ============================================================ */
-
-/* .text-field,
-.text-area,
-.password-field {
-    -fx-background-color: #181210;
-    -fx-background-radius: 3px;
-    -fx-border-color: -brass-shadow;
-    -fx-border-width: 1px;
-    -fx-border-radius: 3px;
-    -fx-text-fill: -cream;
-    -fx-prompt-text-fill: -cream-faint;
-    -fx-highlight-fill: -brass-shadow;
-    -fx-highlight-text-fill: -cream;
-    -fx-font-size: 14px;
-} */
-
-/* .text-field,
-.password-field {
-    -fx-padding: 8px 12px;
-} */
 
 /* A TextArea paints its inner viewport separately — without this
    you get a white box inside your dark border. */
@@ -424,74 +398,6 @@
 
 
 /* ============================================================
-   Lists, choices, checkboxes
-   ============================================================ */
-
-.list-view,
-.combo-box-popup .list-view {
-    -fx-background-color: -ink;
-    -fx-border-color: -brass-shadow;
-    -fx-border-width: 1px;
-}
-
-.list-cell {
-    -fx-background-color: transparent;
-    -fx-text-fill: -cream;
-    -fx-padding: 8px 12px;
-}
-
-.list-cell:odd {
-    -fx-background-color: rgba(255, 255, 255, 0.03);
-}
-
-.list-cell:hover {
-    -fx-background-color: rgba(201, 160, 92, 0.15);
-    -fx-text-fill: -brass-bright;
-}
-
-.list-cell:filled:selected {
-    -fx-background-color: -brass-shadow;
-    -fx-text-fill: -cream;
-}
-
-.combo-box,
-.choice-box {
-    -fx-background-color: -ink-raised;
-    -fx-background-radius: 3px;
-    -fx-border-color: -brass-shadow;
-    -fx-border-width: 1px;
-    -fx-border-radius: 3px;
-    -fx-padding: 2px 4px;
-}
-
-.combo-box .list-cell,
-.choice-box .label {
-    -fx-text-fill: -cream;
-}
-
-.combo-box .arrow,
-.choice-box .arrow {
-    -fx-background-color: -brass;
-}
-
-.check-box .box,
-.radio-button .radio {
-    -fx-background-color: #181210;
-    -fx-border-color: -brass-shadow;
-    -fx-border-width: 1px;
-}
-
-.check-box:selected .mark,
-.radio-button:selected .dot {
-    -fx-background-color: -brass-bright;
-}
-
-.check-box .text,
-.radio-button .text {
-    -fx-fill: -cream;
-}
-
-/* ============================================================
    Verdict / outcome screens
    ============================================================ */
 
@@ -548,14 +454,21 @@
     -fx-font-weight: bold;
     -fx-font-size: 11px;
     -fx-background-color: #211a14;
+    -fx-padding: 12px
 }
 
 .timer-label {
-    -fx-text-fill: -cream;
     -fx-font-family: "Georgia", "Palatino Linotype", serif;
     -fx-font-weight: bold;
-    -fx-font-size: 11px;
-    -fx-background-color: #211a14;
+    -fx-font-size: 13px;
+    -fx-text-fill: #f2ead8;
+    -fx-background-color: rgba(30, 23, 18, 0.72);
+    -fx-background-radius: 5px;
+    -fx-border-color: rgba(201, 160, 92, 0.5);
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 4px 10px;
+    -fx-alignment: center;
 }
 
 .interactable-text {
@@ -591,5 +504,94 @@
     -fx-text-alignment: center;
     -fx-font-size: 15px;
     -fx-background-color: #211a14;
+    -fx-padding: 12px;
+}
+
+.evaluation-label-text {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-text-alignment: center;
+    -fx-font-size: 11px;
+    -fx-background-color: #211a14;
+    -fx-padding: 12px;
+}
+
+.rationale-intro-label-text {
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-text-alignment: center;
+    -fx-font-size: 12px;
+    -fx-background-color: #251d17;
+    -fx-padding: 12px;
+}
+
+.intro-label-text{
+    -fx-text-fill: -cream;
+    -fx-font-family: "Georgia", "Palatino Linotype", serif;
+    -fx-text-alignment: center;
+    -fx-font-size: 12px;
+    -fx-background-color: #211a14;
+    -fx-padding: 12px;
+}
+
+/* Dialogue overlay: warm translucent surface over the scene. */
+#txtaChat {
+    -fx-background-color: rgba(30, 23, 18, 0.86);
+    -fx-background-insets: 0;
+    -fx-background-radius: 6px;
+    -fx-border-color: rgba(201, 160, 92, 0.45);
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-text-fill: #f2ead8;
+    -fx-font-size: 14px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(
+        gaussian, rgba(0, 0, 0, 0.3), 12, 0, 0, 3
+    );
+}
+
+#txtaChat .content {
+    -fx-background-color: transparent;
+    -fx-padding: 12px 14px;
+}
+
+#txtaChat .scroll-pane,
+#txtaChat .viewport {
+    -fx-background-color: transparent;
+}
+
+#txtaChat .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+#txtaChat .scroll-bar .thumb {
+    -fx-background-color: rgba(201, 160, 92, 0.45);
+}
+
+#txtInput {
+    -fx-background-color: rgba(30, 23, 18, 0.82);
+    -fx-background-radius: 4px;
+    -fx-border-color: rgba(201, 160, 92, 0.4);
+    -fx-border-radius: 4px;
+    -fx-text-fill: #f2ead8;
+    -fx-prompt-text-fill: #c3b69c;
+}
+
+#txtInput:focused {
+    -fx-border-color: #c9a05c;
+    -fx-effect: null;
+}
+
+.button.chat-buttons {
+    -fx-background-color: rgba(43, 33, 26, 0.85);
+    -fx-border-color: rgba(201, 160, 92, 0.45);
+    -fx-text-fill: #e8d6b6;
+}
+
+.button.chat-buttons:hover {
+    -fx-background-color: rgba(74, 58, 44, 0.95);
+    -fx-border-color: #c9a05c;
+    -fx-text-fill: #fff0d2;
+    -fx-effect: null;
 }
 

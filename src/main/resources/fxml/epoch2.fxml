@@ -18,17 +18,15 @@
                   <Image url="@../images/Epoch%202%20Images/epoch2DanSmoking.jpg" />
                </image></ImageView>
             <Rectangle fx:id="rectAlex" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="317.0" layoutX="380.0" layoutY="90.0" onMouseClicked="#onAlexClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="154.0" />
-            <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="371.0" layoutY="18.0" prefHeight="33.0" prefWidth="75.0" styleClass="timer-label" textAlignment="CENTER" />
             <Rectangle fx:id="rectPanel" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="33.0" layoutX="364.0" layoutY="153.0" onMouseClicked="#onClickPanelRectangle" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="24.0" />
             <Circle fx:id="travelCircle" fill="#d07a71" layoutX="80.0" layoutY="45.0" onMouseClicked="#onTravelClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
-            <Button fx:id="muteBtn" layoutX="697.0" layoutY="386.0" mnemonicParsing="false" onAction="#onMute" styleClass="mute-button" text="Text" />
-            <Button fx:id="decisionButton" layoutX="16.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#onDecisionButtonClick" styleClass="decision-button" text="Make your decision" />
-            <Label fx:id="incompleteInvestigationLbl" layoutX="24.0" layoutY="119.0" prefHeight="134.0" prefWidth="113.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Button fx:id="decisionButton" layoutX="663.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#onDecisionButtonClick" styleClass="decision-button" text="Make your decision" />
+            <Label fx:id="incompleteInvestigationLbl" layoutX="668.0" layoutY="66.0" prefHeight="134.0" prefWidth="113.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="chatPanelAnchorPane" prefHeight="400.0" prefWidth="800.0" visible="false">
          <children>
-            <fx:include fx:id="chatPanel" layoutY="10.0" source="chat.fxml" />
+            <fx:include fx:id="chatPanel" layoutY="50.0" source="chat.fxml" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="panelAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" visible="false">
@@ -47,9 +45,12 @@
                <image>
                   <Image url="@../images/Epoch%202%20Images/brokenPanelCloseup.png" />
                </image></ImageView>
-            <Label fx:id="lblHint" alignment="CENTER" layoutX="265.0" layoutY="361.0" styleClass="interactable-text" text="It seems the wires have been tampered with." textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="lblHint" alignment="CENTER" layoutX="265.0" layoutY="355.0" styleClass="interactable-text" text="It seems the wires have been tampered with." textAlignment="CENTER" wrapText="true" />
          </children>
       </AnchorPane>
-      <Button fx:id="backButton" layoutX="703.0" layoutY="32.0" maxHeight="33.0" maxWidth="68.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" styleClass="back-button" text="Go Back" />
+      <Button fx:id="backButton" layoutX="16.0" layoutY="32.0" maxHeight="26.0" maxWidth="68.0" mnemonicParsing="false" onMouseClicked="#backButtonClick" styleClass="back-button" text="Go Back" />
+      <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="371.0" layoutY="18.0" prefHeight="33.0" prefWidth="75.0" styleClass="timer-label" textAlignment="CENTER" />
+      <Rectangle fx:id="blackout" arcHeight="5.0" arcWidth="5.0" height="446.0" mouseTransparent="true" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="818.0" />
+      <Button fx:id="muteBtn" layoutX="674.0" layoutY="338.0" mnemonicParsing="false" onAction="#onMute" prefHeight="26.0" prefWidth="100.0" styleClass="mute-button" text="Text" />
    </children>
 </Pane>

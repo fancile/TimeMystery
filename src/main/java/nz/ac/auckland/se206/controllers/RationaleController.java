@@ -55,22 +55,23 @@ public class RationaleController {
     // Setting the text of label in the file that shows what intervention the player chose in case
     // they need a reminder.
     if (chosenIntervention.equals("hire_security")) {
-      interventionChosenLbl.setText("You chose to hire security.");
+      interventionChosenLbl.setText("Your move: hire overnight security.");
     } else if (chosenIntervention.equals("cancel_concert")) {
-      interventionChosenLbl.setText("You chose to cancel the concert.");
-    } else if (chosenIntervention.equals("report_panel")) {
-      interventionChosenLbl.setText("You chose to report the panel.");
+      interventionChosenLbl.setText("Your move: cancel the concert.");
+    } else if (chosenIntervention.equals("fix_panel")) {
+      interventionChosenLbl.setText("Your move: try to fix the panel.");
     } else {
-      interventionChosenLbl.setText("You chose to convince Alex.");
+      interventionChosenLbl.setText("Your move: convince Alex to keep Dan.");
     }
 
     // Setting the text of the rationale explanation label
     rationaleExplanationLbl.setText(
-        "Interesting choice, detective!\n\n"
-            + "Why do you say that?\n\n"
-            + "Write your analysis in the file on the right.\n\n"
-            + "Include evidence you found, information you got from Alex, and why your choice will"
-            + " save Harmony Hall.\n\nDid you save Harmony Hall? Let's see!");
+        "Interesting choice, detective.\n\n"
+            + "Now convince me.\n\n"
+            + "Write your reasoning in the file to the right.\n\n"
+            + "What do you believe really happened? What evidence points there? And why do you"
+            + " think your choice will stop the fire?\n\n"
+            + "Let's see if you're right.");
 
     // Rationale timer - calculating and displaying how much time the player has left
     context

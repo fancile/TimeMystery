@@ -3,16 +3,22 @@ package nz.ac.auckland.se206.controllers;
 
 // Importing needed libraries.
 import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.GameStateContext;
 
 public class IntroController {
   // Creating FXML files for the elements in the intro scene
   @FXML private Button introButton;
   @FXML private Label introTextLabel;
+  @FXML private Button muteBtn;
+
+  // create the GameStateContext object
+  private GameStateContext context = new GameStateContext();
 
   // Holds the page number the player is currently on
   private int pageNumber = 1;
@@ -27,6 +33,29 @@ public class IntroController {
     introTextLabel.setVisible(true);
     pageNumber = 1;
     showPage(pageNumber);
+    // Start BGM
+    AudioManager.playBackgroundMusic();
+    // Set the mute button text as required.
+    if (!context.getMuted()) {
+      muteBtn.setText("Unmute SFX");
+    } else {
+      muteBtn.setText("Mute SFX");
+    }
+  }
+
+  // Mute method for the mute button - checks whether mute button has been pressed already and sets
+  // text accordingly mute or unmute
+  @FXML
+  private void onMute(ActionEvent event) {
+    if (context.getMuted()) {
+      muteBtn.setText("Unmute SFX");
+      context.setMuted(false);
+      AudioManager.setMuted(true);
+    } else {
+      muteBtn.setText("Mute SFX");
+      context.setMuted(true);
+      AudioManager.setMuted(false);
+    }
   }
 
   /**
@@ -42,8 +71,8 @@ public class IntroController {
         // Setting the text of the intro label.
         introTextLabel.setText(
             "This is Harmony Hall.\n"
-                + " Twenty years ago, it burnt down, two days before a huge concert.\n"
-                + " The hall's owner, Alex, ever found out why. No one ever found out why.");
+                + " Twenty years ago, it burnt down, days before a huge concert.\n"
+                + " The hall's owner, Alex, never found out why.");
         // Setting the button text to say "Next"
         introButton.setText("Next");
         break;
@@ -51,15 +80,16 @@ public class IntroController {
       case 2:
         introTextLabel.setText(
             "You are a time travelling investigator.\n"
-                + " Your job is to travel between the past and the future, gather evidence, and"
-                + " figure out how to stop the fire before it happens.");
+                + " Move between the past and the present, speak with Alex, gather evidence,"
+                + " and uncover what really happened, before the fire ever starts.");
         introButton.setText("Next");
         break;
       // If the player is on the third page of the intro slate
       case 3:
         introTextLabel.setText(
             "There is a clock in each epoch. Click it to travel between time periods.\n"
-                + " Objects that glow gold can be clicked on - and they may hold clues.");
+                + "Anything that glows gold can be examined, opened, or moved - and may hold a"
+                + " clue.");
         introButton.setText("Next");
         break;
       // If the player is on the fourth and final page of the intro slate

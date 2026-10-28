@@ -13,8 +13,8 @@
             <Image url="@../images/Other%20Images/gameOpening.png" />
          </image>
       </ImageView>
-      <Label fx:id="successOrFailLbl" alignment="CENTER" layoutX="168.0" layoutY="28.0" prefHeight="63.0" prefWidth="461.0" style="-fx-background-color: black;" styleClass="verdict-label" textAlignment="CENTER" textFill="WHITE" />
-      <Label fx:id="outcomeLbl" alignment="CENTER" layoutX="148.0" layoutY="149.0" prefHeight="219.0" prefWidth="493.0" style="-fx-background-color: black;" styleClass="verdict-outcome" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+      <Label fx:id="successOrFailLbl" alignment="CENTER" layoutX="168.0" layoutY="28.0" prefHeight="63.0" prefWidth="461.0" styleClass="verdict-label" textAlignment="CENTER" />
+      <Label fx:id="outcomeLbl" alignment="CENTER" layoutX="211.0" layoutY="132.0" prefHeight="255.0" prefWidth="373.0" styleClass="verdict-outcome" textAlignment="CENTER" wrapText="true" />
       <Button fx:id="replayBtn" layoutX="681.0" layoutY="355.0" mnemonicParsing="false" onAction="#onReplayBtn" text="Replay" />
    </children>
 </Pane>

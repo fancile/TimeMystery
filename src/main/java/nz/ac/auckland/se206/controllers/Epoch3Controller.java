@@ -16,6 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.GameStateContext;
 
 /**
@@ -26,8 +27,6 @@ public class Epoch3Controller {
   @FXML private Rectangle Alex;
   @FXML private Rectangle pavement;
   @FXML private Label lblTimer;
-  @FXML private Button travelButton;
-  @FXML private Button playAgainButton;
   @FXML private Button BACK;
   @FXML private AnchorPane match;
   @FXML private Button endInvestigationBtn;
@@ -76,6 +75,7 @@ public class Epoch3Controller {
     pavementView.setVisible(false);
     incompleteInvestigationLbl.setVisible(false);
     zoomDebris.setVisible(false);
+    muteBtn.setVisible(true);
 
     plank1StartX = plank1.getLayoutX();
     plank1StartY = plank1.getLayoutY();
@@ -113,8 +113,6 @@ public class Epoch3Controller {
         BACK.setVisible(true);
         openingEpoch3.setVisible(false);
         pavementView.setVisible(true);
-        plank1.setLayoutX(298);
-        plank1.setLayoutY(166);
         break;
     }
   }
@@ -129,10 +127,6 @@ public class Epoch3Controller {
   @FXML
   public void onButtonClick(MouseEvent event) throws IOException {
     switch (((Button) event.getSource()).getId()) {
-      case "playAgainButton":
-        chatPanelController.resetChat();
-        App.setRoot("intro");
-        break;
       case "BACK":
         if (zoomDebris.isVisible()) {
           zoomDebris.setVisible(false);
@@ -266,9 +260,11 @@ public class Epoch3Controller {
     if (context.getMuted()) {
       muteBtn.setText("Unmute SFX");
       context.setMuted(false);
+      AudioManager.setMuted(true);
     } else {
       muteBtn.setText("Mute SFX");
       context.setMuted(true);
+      AudioManager.setMuted(false);
     }
   }
 
@@ -325,11 +321,16 @@ public class Epoch3Controller {
   private void wiresAndCigsClick(MouseEvent event) {
     zoomDebris.setVisible(true);
     zoomDebris.toFront();
+    muteBtn.toFront();
     lblTimer.toFront();
     endInvestigationBtn.toFront();
     incompleteInvestigationLbl.toFront();
     BACK.toFront();
-    zoomedDebrisLbl.setText("Whoa!\nBurnt wires? Next to cigs?\nAs if the cigs burnt them...");
+    zoomedDebrisLbl.setText(
+        "Whoa!\n"
+            + "Burnt wires? Next to cigs?\n"
+            + "As if the cigs burnt them...\n"
+            + "It's worth asking Alex about this.");
     chatPanelController.notifyInteractableUsed(
         "The player has found cigarettes next to wires. This is quite shocking. Soon, feel free"
             + " to discuss how Dan was a smoker.");

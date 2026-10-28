@@ -112,7 +112,8 @@ public class Epoch1Controller {
     openFolder.setOpacity(1);
     openFolder.setVisible(true);
     sceneHistory.push(finalConcertFolder);
-    openFolderLabel.setText("Dan and his band? Top choice to be cut?\nInteresting...");
+    openFolderLabel.setText(
+        "Dan and his band? Top choice to be cut?\nInteresting...\nWhy does Alex think this?");
     discoveredList = true;
   }
 
@@ -236,9 +237,11 @@ public class Epoch1Controller {
     if (context.getMuted()) {
       muteBtn.setText("Unmute SFX");
       context.setMuted(false);
+      AudioManager.setMuted(true);
     } else {
       muteBtn.setText("Mute SFX");
       context.setMuted(true);
+      AudioManager.setMuted(false);
     }
   }
 }

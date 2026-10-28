@@ -2,12 +2,15 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.GameStateContext;
 
 public class TravelController {
@@ -15,6 +18,7 @@ public class TravelController {
   @FXML private AnchorPane afterAnchorPane;
   @FXML private AnchorPane prepAnchorPane;
   @FXML private Label lblTimer;
+  @FXML private Button muteBtn;
 
   private GameStateContext context =
       GameStateContext.getCurrentContext(); // Reference to the GameStateContext
@@ -24,6 +28,11 @@ public class TravelController {
     // Initialize the travel scene, set up any necessary data or UI elements
     // continue the timer
     bindTimer();
+    if (!context.getMuted()) {
+      muteBtn.setText("Unmute SFX");
+    } else {
+      muteBtn.setText("Mute SFX");
+    }
   }
 
   @FXML
@@ -92,5 +101,20 @@ public class TravelController {
     int minutes = totalSeconds / 60;
     int seconds = totalSeconds % 60;
     lblTimer.setText(String.format("%d:%02d", minutes, seconds));
+  }
+
+  // Mute method for the mute button - checks whether mute button has been pressed already and sets
+  // text accordingly mute or unmute
+  @FXML
+  private void onMute(ActionEvent event) {
+    if (context.getMuted()) {
+      muteBtn.setText("Unmute SFX");
+      context.setMuted(false);
+      AudioManager.setMuted(true);
+    } else {
+      muteBtn.setText("Mute SFX");
+      context.setMuted(true);
+      AudioManager.setMuted(false);
+    }
   }
 }

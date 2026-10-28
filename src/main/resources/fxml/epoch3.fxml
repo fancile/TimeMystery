@@ -11,8 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.Epoch3Controller">
   <children>
-    <Button fx:id="travelButton" layoutX="34.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" opacity="0.0" text="Travel" />
-    <fx:include fx:id="chatPanel" layoutX="6.0" layoutY="0.0" source="chat.fxml" visible="false" />
+    <fx:include fx:id="chatPanel" layoutY="50.0" source="chat.fxml" />
 
     <AnchorPane fx:id="pavementView" layoutX="3.0" visible="false">
       <children>
@@ -43,14 +42,13 @@
           </ImageView>
           <Rectangle fx:id="Alex" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="311.0" layoutX="447.0" layoutY="93.0" onMouseClicked="#onRectangleClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="142.0" />
           <Rectangle fx:id="pavement" arcHeight="5.0" arcWidth="5.0" fill="#d07a71" height="33.0" layoutX="315.0" layoutY="379.0" onMouseClicked="#onRectangleClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" rotate="-4.6" stroke="BLACK" strokeType="INSIDE" width="82.0" />
-      <Button fx:id="endInvestigationBtn" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#onDecisionButtonClick" styleClass="decision-button" text="Make your decision" />
+      <Button fx:id="endInvestigationBtn" layoutX="663.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#onDecisionButtonClick" styleClass="decision-button" text="Make your decision" />
                 
-            <Label fx:id="incompleteInvestigationLbl" layoutX="14.0" layoutY="62.0" prefHeight="134.0" prefWidth="113.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Label fx:id="incompleteInvestigationLbl" layoutX="670.0" layoutY="66.0" prefHeight="134.0" prefWidth="113.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
          </children>
       </AnchorPane>
       <Circle fill="#d07a71" layoutX="262.0" layoutY="37.0" onMouseClicked="#onTravelClick" onMouseEntered="#onHover" onMouseExited="#onExit" opacity="0.0" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
-  <Button fx:id="BACK" layoutX="703.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" prefHeight="2.0" prefWidth="68.0" styleClass="back-button" text="Go back" />
-      <Button fx:id="muteBtn" layoutX="694.0" layoutY="348.0" mnemonicParsing="false" onAction="#onMute" styleClass="mute-button" text="Mute" />
+  <Button fx:id="BACK" layoutX="16.0" layoutY="32.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" prefHeight="26.0" prefWidth="68.0" styleClass="back-button" text="Go back" />
       <AnchorPane fx:id="zoomDebris" prefHeight="429.0" prefWidth="798.0" visible="false">
          <children>
             <ImageView fitHeight="438.0" fitWidth="806.0" pickOnBounds="true" preserveRatio="true">
@@ -58,9 +56,11 @@
                   <Image url="@../images/Epoch%203%20Images/zoomedDebrisCloseup.jpg" />
                </image>
             </ImageView>
-            <Label fx:id="zoomedDebrisLbl" alignment="CENTER" layoutX="240.0" layoutY="350.0" prefHeight="68.0" prefWidth="304.0" styleClass="interactable-text" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
+            <Label fx:id="zoomedDebrisLbl" alignment="CENTER" layoutX="240.0" layoutY="349.0" prefHeight="68.0" prefWidth="304.0" styleClass="interactable-text" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
          </children>
       </AnchorPane>
     <Label fx:id="lblTimer" alignment="CENTER" contentDisplay="CENTER" layoutX="371.0" layoutY="18.0" prefHeight="33.0" prefWidth="74.0" styleClass="timer-label" textAlignment="CENTER" />
+      <Rectangle fx:id="blackout" arcHeight="5.0" arcWidth="5.0" height="481.0" layoutX="-42.0" layoutY="-30.0" mouseTransparent="true" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="846.0" />
+      <Button fx:id="muteBtn" layoutX="674.0" layoutY="338.0" mnemonicParsing="false" onAction="#onMute" prefHeight="26.0" prefWidth="100.0" styleClass="mute-button" text="Mute" />
   </children>
 </Pane>

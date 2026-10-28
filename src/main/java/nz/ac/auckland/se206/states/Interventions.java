@@ -9,47 +9,42 @@ package nz.ac.auckland.se206.states;
  * intervention is clicked.
  */
 public enum Interventions {
-  // If player chooses to report the panel to hall managament.
-  REPORT(
-      "You storm into the office of hall management, giving an impassioned speech about your"
-          + " evidence: the broken electrical panel and the cigarettes. Something is going to"
-          + " happen, you warn.\n"
-          + "The management pauses - and shrugs. Nothing they can do, they say. Your evidence is"
-          + " circumstantial.\n"
-          + "A drumstick? Cigarettes? A panel? Please.\n"
-          + "The hall burns down that night.\n"
-          + "The problem is not resolved.\nBetter luck next time, detective!",
+  // If player chooses to fix the panel to hall managament.
+  FIX(
+      "You spend the evening repairing the faulty wiring, leaving nothing loose that could"
+          + " spark.\n\n"
+          + "The panel hums steadily - it seems to be working.\n\n"
+          + "But when Dan returns that night, he sees it's been fixed. Furious, he takes his"
+          + " drumstick and smashes the panel all over again.\n\n"
+          + "The hall burns down that night.\n\n"
+          + "The problem is not resolved.\n\nBetter luck next time, detective!",
       false),
 
   CANCEL(
-      "You beg Alex to cancel the concert, believing this will prevent the fire.\n"
-          + "He does so, begrudgingly.\n"
-          + "However, Dan is still angry about being cut from the concert, and still exacts his"
-          + " revenge.\n"
-          + "The hall burns down that night.\n"
-          + "The problem is not resolved.\n"
-          + "Better luck next time, detective!",
+      "You plead with Alex to cancel the concert outright.\n\n"
+          + "He agrees, reluctantly.\n\n"
+          + "But this didn't stop Dan's anger over being cut - and he"
+          + " burns down the hall in revenge anyways.\n\n"
+          + "The hall burns down that night.\n\n"
+          + "The problem is not resolved.\n\nBetter luck next time, detective!",
       false),
 
   HELP(
-      "You wrangle Alex and Dan into a room. You beg them to just talk to each other - and they"
-          + " do.\n"
-          + "Alex agrees to keep Dan in the show. Dan lights up.\n"
-          + "But Alex is petty. He tells Dan that his song will be near the very end and may still"
-          + " get cut. Dan's anger returns tenfold.\n"
-          + "The hall burns down that night.\n"
-          + "The problem is not resolved.\n"
-          + "Better luck next time, detective!",
+      "You bring Alex and Dan together, urging them to talk it out.\n\n"
+          + "Alex relents and agrees to keep Dan in the lineup. Dan's face lights up.\n\n"
+          + "But Alex can't resist one last dig - Dan's slot will be pushed to the very"
+          + " end of the show, and might still be cut. Dan's anger comes roaring back.\n\n"
+          + "The hall burns down that night.\n\n"
+          + "The problem is not resolved.\n\nBetter luck next time, detective!",
       false),
 
   HIRE(
-      "You hire overnight security to watch Harmony Hall.\n"
-          + "Three guards stand watch all night, patrolling the venue tirelessly.\n"
-          + "When Dan sneaks over, he freezes - he'll be caught! He flees before he can be caught"
-          + " or cause the fire.\n"
-          + "The hall does not burn down that night.\n"
-          + "The problem is resolved.\n"
-          + "Awesome work, detective!",
+      "You arrange overnight security for Harmony Hall.\n\n"
+          + "Guards patrol the venue through the night, watchful and steady.\n\n"
+          + "When Dan slips in to set his plan in motion, he sees them - and freezes."
+          + " He flees before he can do any damage.\n\n"
+          + "The hall stands the next morning.\n\n"
+          + "The problem is resolved.\n\nWell done, detective!",
       true);
 
   private String consequece;
@@ -77,8 +72,8 @@ public enum Interventions {
         return HIRE;
       case "cancel_concert":
         return CANCEL;
-      case "report_panel":
-        return REPORT;
+      case "fix_panel":
+        return FIX;
       case "help_dan":
         return HELP;
       default:

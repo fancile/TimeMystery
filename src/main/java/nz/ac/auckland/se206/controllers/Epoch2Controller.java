@@ -19,6 +19,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.AudioManager;
 import nz.ac.auckland.se206.GameStateContext;
 
 public class Epoch2Controller {
@@ -143,10 +144,14 @@ public class Epoch2Controller {
   private void onClickPanel(MouseEvent event) {
     // set the epoch 2 interaction completed variable to true on GameStateContext via the setter
     context.setInteractedE2(true);
+    lblTimer.toFront();
     panelAnchorPane.setVisible(false);
     // Set text for the hint label
     lblHint.setText(
-        "Whoa!\nIt seems the wires have been hit repeatedly...\nAll this exposed wiring!");
+        "Whoa!\n"
+            + "It seems the wires have been hit repeatedly...\n"
+            + "All this exposed wiring!\n"
+            + "Does Alex know about this? I should ask...");
 
     chatPanelController.notifyInteractableUsed(
         "The player has found the broken electrical panel. You now know they have seen it. Feel"
@@ -245,9 +250,11 @@ public class Epoch2Controller {
     if (context.getMuted()) {
       muteBtn.setText("Unmute SFX");
       context.setMuted(false);
+      AudioManager.setMuted(true);
     } else {
       muteBtn.setText("Mute SFX");
       context.setMuted(true);
+      AudioManager.setMuted(false);
     }
   }
 }

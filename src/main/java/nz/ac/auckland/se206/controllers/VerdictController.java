@@ -57,12 +57,20 @@ public class VerdictController {
     }
   }
 
+  /** Resets the verdict state so a new playthrough starts with no stale outcome. */
+  public static void resetVerdictState() {
+    chosenIntervention = "";
+    rationaleSupported = false;
+  }
+
   // Java action method for the replay button that resets the game and stops the timer then sets the
   // root scene to intro scene
   @FXML
   public void onReplayBtn(ActionEvent event) throws IOException {
     // Calle the GameStateContext resetContext method
     context.resetContext();
+    InterventionSelectionController.resetChosenIntervention();
+    VerdictController.resetVerdictState();
 
     // Clear LLM Memory
     if (chatPanelController != null) {

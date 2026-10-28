@@ -15,7 +15,7 @@ public class InterventionSelectionController {
   // Creating FXML fields for all the elements of the intervention selection scene
   @FXML private Button hireButton;
   @FXML private Button cancelButton;
-  @FXML private Button reportButton;
+  @FXML private Button fixButton;
   @FXML private Button helpButton;
   @FXML private Label timerLabel;
 
@@ -54,6 +54,11 @@ public class InterventionSelectionController {
     }
   }
 
+  /** Resets the chosen intervention so a new playthrough starts with no stale selection. */
+  public static void resetChosenIntervention() {
+    chosenIntervention = "";
+  }
+
   /**
    * Handles what happens if the player clicks to hire security as their intervention.
    *
@@ -89,18 +94,18 @@ public class InterventionSelectionController {
   }
 
   /**
-   * Handles what happens if the player clicks to report the panel as their intervention.
+   * Handles what happens if the player clicks to fix the panel as their intervention.
    *
-   * @param event the mouse event triggered when the user clicks on the report button
+   * @param event the mouse event triggered when the user clicks on the fix button
    * @throws IOException if there is an I/O error
    */
   @FXML
-  private void reportButtonClick(MouseEvent event) throws IOException {
+  private void fixButtonClick(MouseEvent event) throws IOException {
     // Stop the timer
     context.stopTimer();
-    System.out.println("Report clicked!");
-    // Set the chosen intervention to report panel
-    chosenIntervention = "report_panel";
+    System.out.println("Fix clicked!");
+    // Set the chosen intervention to fix panel
+    chosenIntervention = "fix_panel";
     // Go to the rationale scene
     App.setRoot("rationale");
   }

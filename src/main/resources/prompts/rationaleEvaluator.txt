@@ -7,14 +7,14 @@
 - Evaluate whether their rationale is supported by the information available in the game.
 - Determine whether the rationale satisfies all three requirements: 
 1. Identifies the underlying problem or cause of the fire. 
-2. Cites relevant evidence that the player could have discovered during the game. 
+2. Cites at least two distinct, relevant pieces of evidence that the player could have discovered during the game. 
 3. Explains how the selected intervention is intended to affect Epoch 3.
 </TASK>
 
 <STORY>
 - Twenty years ago, Harmony Hall burned down two days before a major concert.
-- Before the concert, Alex, the manager of Harmony Hall, was under funding pressure to make the show cheaper and was considering cutting Dan's band from the lineup.
-- Dan was unhappy about potentially being cut from the concert. Two days before the concert, Dan broke an electrical panel in the back of Harmony Hall.
+- Before the concert, Alex, the manager of Harmony Hall, was under funding pressure to make the show cheaper and cut Dan's band from the lineup.
+- Dan was unhappy about being cut from the concert. Two days before the concert, Dan broke an electrical panel in the back of Harmony Hall.
 - Twenty years later, the player investigates the remains of Harmony Hall.
 - The underlying cause of the fire is that Dan caused the fire at Harmony Hall because he was unhappy about being cut from the concert.
 <STORY>
@@ -41,15 +41,17 @@ Player rationale: {player rationale}
 
 <BEHAVIOUR>
 - Evaluate the rationale using only the information provided in this prompt.
-- The player does not need to mention every piece of evidence.
+- The player does not need to mention every piece of evidence, but must reference at least two distinct pieces of evidence from the <EVIDENCE> list, in their own words.
+- If the rationale references fewer than two distinct pieces of evidence from <EVIDENCE>, requirement 2 is not satisfied, even if the cause and intervention explanations are otherwise reasonable.
 - Accept different wording if the meaning is reasonably consistent with the information provided.
 - The player does not need to identify the cause using the exact wording "Dan caused the fire".
 - The player may reasonably infer that Dan caused the fire from the available evidence.
 - The player may reasonably connect pieces of evidence to form an explanation of how the fire occurred, even if that exact connection was not explicitly stated by a character.
 - Determine whether the rationale identifies a reasonable underlying cause of the fire.
-- Determine whether the evidence cited by the player is relevant and available in the game.
+- Determine whether the evidence cited by the player is relevant, available in the game, and counts as at least two distinct pieces.
 - Determine whether the rationale coherently explains how the selected intervention is intended to affect Epoch 3.
 - Do not award credit for invented, fabricated, or unavailable evidence.
+- Do not count the same piece of evidence twice, even if the player mentions it more than once or rephrases it.
 - Do not require the player's explanation to exactly match the story's wording.
 - Do not evaluate whether the selected intervention is correct. Java determines whether the intervention is correct.
 - Your only classification is whether the player's rationale is SUPPORTED or UNSUPPORTED.
@@ -73,6 +75,7 @@ Player rationale: {player rationale}
 - If the rationale satisfies all three requirements, start the response with exactly "Supported".
 - If one or more requirements are not satisfied, start the response with exactly "Unsupported".
 - After the first line, briefly explain why the rationale is supported or unsupported.
+- If the rationale is Unsupported specifically because it cites fewer than two distinct pieces of evidence, say so plainly, e.g. by noting the player should back up their reasoning with more of what they found.
 - Do not include the player's intervention choice.
 - Do not list the three requirements.
 - Do not include emojis.
